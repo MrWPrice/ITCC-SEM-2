@@ -13,17 +13,17 @@ for (let i = 0; i < noOfPoints; i++) {
 function draw(){
     background(0);
     fill(255);
-    noStroke(); // so that the text below doesn't have a large stroke value
+    noStroke(); 
     text('tap to start', width/2, 20);
   
     let micLevel = mic.getLevel();
-    let mappedMicLevel = map(micLevel, 0, 0.1, 0, 200); // map micLevel to desirable range
+    let mappedMicLevel = map(micLevel, 0, 0.1, 0, 200); // map micLevel 
   
-    translate(width / 2, height / 2); // move point of origin to centre of canvas
+    translate(width / 2, height / 2); // move  to centre of canvas
   
     let noOfPoints = 12; // total number of points to draw
   
-    for (let i = 0; i < noOfPoints; i++) { // for all of the points
+    for (let i = 0; i < noOfPoints; i++) { 
       rotate(TWO_PI / noOfPoints); // rotate around a circle - default for p5 is radians
   
       strokeWeight(4);
