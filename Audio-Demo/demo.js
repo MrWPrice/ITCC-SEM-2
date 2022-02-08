@@ -1,33 +1,19 @@
-let deg = 0; // starting point
-let rotationDiff = 1;
+let mic;
 
-let rotation;
-let rotationInterval;
-
-function myPress(){
-    alert("Hello! I am an alert box!!");
+ function setup(){
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(userStartAudio);
+  textAlign(CENTER);
+  mic = new p5.AudioIn();
+  mic.start();
 }
 
-function onePress(){
-    rotationInterval = setInterval("rotateDiv()", 10);
-    console.log("start");
-}
+function draw(){
+  background(0);
+  fill(255);
+  text('tap to start', width/2, 20);
 
-function twoPress(){
-    clearInterval(rotationInterval);
-    console.log("stop");  
-}
-
-function rotateDiv(){
-    let divAnim01 = document.getElementById("divAnim01");
-
-    //divAnim01.style.webkitTransform = "rotate(" + deg + "deg)";
-    divAnim01.style.transform = "rotate(" + deg + "deg)";
-    // divAnim01.style.MozTransform = "rotate(" + deg + "deg)";
-    // divAnim01.style.msTransform = "rotate(" + deg + "deg)";
-    // divAnim01.style.OTransform = "rotate(" + deg + "deg)";
-    deg += rotationDiff;
-    if(deg > 360) {
-     deg = 0;
-    }
+  micLevel = mic.getLevel();
+  let y = height - micLevel * height;
+  ellipse(width/2, y, 10, 10);
 }
