@@ -2,7 +2,7 @@ let x, y;
 let radius = 100;
 let r,g,b;
 let timer = 10;
-let interval = 60;
+let interval = 120;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -28,7 +28,7 @@ function mousePressed() {
 
   let d = dist(mouseX, mouseY, x, y); // find the distance between where the mouse is when pressed and our x and y values
          if (d < radius) { // is the distance smaller than the radius of the circe?
-            newCircle(); // create a new circle
+            newCircle(); 
             console.log("Score!"); // log that we've been successful - we'll update this bit later.
           }
 }
