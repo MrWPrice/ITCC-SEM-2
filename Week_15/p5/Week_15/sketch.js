@@ -25,6 +25,15 @@ function draw() {
         }
 }
 
+function mousePressed() {
+
+  let d = dist(mouseX, mouseY, x, y); // find the distance between where the mouse is when pressed and our x and y values
+         if (d < radius) { // is the distance smaller than the radius of the circe?
+            newCircle(); // create a new circle
+            console.log("Score!"); // log that we've been successful - we'll update this bit later.
+          }
+  }
+
 function newCircle() { // reset x, y and rgb values 
   x = random(windowWidth);
   y = random(windowHeight);
