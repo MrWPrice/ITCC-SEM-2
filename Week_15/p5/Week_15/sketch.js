@@ -19,7 +19,7 @@ function setup() {
 function draw() {
     background(220); // set background to grey
 
-    if(gameOver) {
+    if(!gameOver) {
       noStroke(); // turn stroke off
       fill(r, g, b); // create a colour fill with out random rgb values
       ellipse(x, y, radius*2, radius*2); // draw a circle
@@ -38,7 +38,7 @@ function draw() {
       
           gameOver = true;
         }
-        
+
       } else {
         textSize(100);
         textAlign(CENTER, CENTER);
@@ -51,12 +51,26 @@ function draw() {
 
 function mousePressed() {
 
+  if(!gameOver){
   let d = dist(mouseX, mouseY, x, y); // find the distance between where the mouse is when pressed and our x and y values
          if (d < radius) { // is the distance smaller than the radius of the circe?
             newCircle(); // create a new circle
             score++;
             console.log("Score!"); // log that we've been successful - we'll update this bit later.
           }
+        } 
+        
+        else {
+          let d = dist(mouseX, mouseY, windowWidth/2,  windowHeight/2);
+          if (d < radius*2) {
+            gameOver = false;
+            timer = 10;
+            score = 0;
+          }
+        }
+        
+     
+    
   }
 
 function newCircle() { // reset x, y and rgb values 
