@@ -4,6 +4,7 @@ let r,g,b;
 let timer = 10;
 let interval = 60;
 let score =0;
+let gameOver =false;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -17,19 +18,35 @@ function setup() {
 
 function draw() {
     background(220); // set background to grey
-    noStroke(); // turn stroke off
-    fill(r, g, b); // create a colour fill with out random rgb values
-    ellipse(x, y, radius*2, radius*2); // draw a circle
+
+    if(gameOver) {
+      noStroke(); // turn stroke off
+      fill(r, g, b); // create a colour fill with out random rgb values
+      ellipse(x, y, radius*2, radius*2); // draw a circle
+      
+      textSize(24);
+      textAlign(LEFT, CENTER);
+      text("Score: " + score, 10, 30);
+      text("Countdown: " + timer, 120, 30);
+      
       if (frameCount % interval == 0 && timer > 0) { // if the frameCount is divisible by the interval, then the interval (in seconds) has passed and we can draw a new circle
           timer --; // added countdown
           newCircle();
         }
     
-        textSize(24);
-        textAlign(LEFT, CENTER);
-        text("Score: " + score, 10, 30);
-        text("Countdown: " + timer, 120, 30);
+        if (timer === 0) {
+      
+          gameOver = true;
+        }
+        
+      } else {
+        textSize(100);
+        textAlign(CENTER, CENTER);
+        text("GAME OVER", width/2, height/2);
+        
+      } 
 
+      
 }
 
 function mousePressed() {
