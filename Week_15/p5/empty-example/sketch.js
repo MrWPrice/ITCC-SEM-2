@@ -29,7 +29,7 @@ function mousePressed() {
   let d = dist(mouseX, mouseY, x, y); // find the distance between where the mouse is when pressed and our x and y values
          if (d < radius) { // is the distance smaller than the radius of the circe?
             newCircle(); 
-            console.log("Score!"); // log that we've been successful - we'll update this bit later.
+            console.log("Score!"); // log that we've been successful 
           }
 }
 
