@@ -49,7 +49,7 @@ class Particle {
 
 		if (this.pos.y > (height-this.r)) {
 		  this.vel.y *= -1;
-		  this.vel.y = height-this.r;
+		  this.pos.y = height-this.r;
 		} else if (this.pos.y < (0+this.r)) {
 		  this.vel.y *= -1;
 		  this.pos.y = 0+this.r;
