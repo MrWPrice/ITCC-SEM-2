@@ -4,6 +4,7 @@ let attractors = [];
 let numParticles = 5;
 let bgColour = 0;
 let particleColour = 255;
+let song;
 
 
 function setup() {
