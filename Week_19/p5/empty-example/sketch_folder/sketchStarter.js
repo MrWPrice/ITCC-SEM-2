@@ -7,7 +7,7 @@ let particleColour = 255;
 
 
 function setup() {
-	createCanvas(windowWidth, windowHeight); // create a canvas that fills the window
+	createCanvas(500, 500); // create a canvas that fills the window
 	
 	for (let i = 0; i < numParticles; i++) {
     	particles[i] = new Particle(random(50,width-50),random(50,height-50),random(4,8));
