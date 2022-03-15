@@ -80,24 +80,5 @@ class Particle {
 		noFill();
 		ellipse(this.pos.x, this.pos.y,this.mass*2,this.mass*2);
 	}
-	checkEdges() {
 
-		if (this.pos.x > (width - this.r)) {
-		  this.vel.x *= -1;
-		  this.pos.x = width - this.r;
-		} else if (this.pos.x < (0 + this.r)) {
-		  this.vel.x *= -1;
-		  this.pos.x = 0 + this.r;
-		}
-	
-		if (this.pos.y > (height - this.r)) {
-		  this.vel.y *= -1;
-		  this.pos.y = height - this.r;
-		} else if (this.pos.y < (0 + this.r)) {
-		  this.vel.y *= -1;
-		  this.pos.y = 0 + this.r;
-		}
-	
-	
-	  }
 }
