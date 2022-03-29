@@ -3,7 +3,7 @@ function Ship() {
 
     this.show =function() {
 
-        Rect(this.x, height-20, 20, 20);
+        rect(this.x, height-20, 20, 20);
     }
     
 }
