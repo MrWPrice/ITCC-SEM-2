@@ -8,7 +8,7 @@ function Ship() {
     }
 
     this.move = function(dir) {
-        this.x += dir;
+        this.x += dir+5;
 
     }
     
